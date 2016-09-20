@@ -1,0 +1,21 @@
+name       : nxproxy
+version    : 3.5.0
+release    : 1
+source     :
+    - http://code.x2go.org/releases/source/nx-libs/nxproxy/nxproxy-3.5.0-1.tar.gz : 8aa59727dfcd914d73447992120e100c20d17df5aeb42c4ac6712e13d56bbb1e
+license    : GPL-2.0
+component  : programming
+summary    : X proxy for NX
+description: |
+    nxproxy provides the X proxy used by NX
+builddeps  :
+    - nxcomp-devel
+setup      : |
+    %patch -p1 < $pkgfiles/0001-fix_includes.patch
+    %configure --disable-static
+build      : |
+    %make
+install    : |
+    # nxproxy does not provide a make install target, so it has to be done manually.
+    mkdir -p $installdir/usr/bin
+    install -m 0755 nxproxy $installdir/usr/bin

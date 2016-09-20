@@ -1,0 +1,13 @@
+Index: b/Main.c
+===================================================================
+--- a/Main.c	2011-05-09 05:36:07.000000000 -0700
++++ b/Main.c	2016-09-18 11:43:57.964751021 -0700
+@@ -20,7 +20,7 @@
+ #include <string.h>
+ #include <unistd.h>
+ 
+-#include "NX.h"
++#include "nx/NX.h"
+ 
+ #define PANIC
+ #define WARNING
